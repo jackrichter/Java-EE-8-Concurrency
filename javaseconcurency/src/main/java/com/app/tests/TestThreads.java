@@ -1,4 +1,6 @@
-package com.app.runnables;
+package com.app.tests;
+
+import com.app.runnables.ThreadApp;
 
 public class TestThreads {
 
