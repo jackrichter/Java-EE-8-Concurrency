@@ -1,1 +1,5 @@
+com\app\dao\PlaceholderDao.class
 com\app\tests\Test.class
+com\app\beans\PlaceholderBeans.class
+com\app\runnables\ThreadApp.class
+com\app\runnables\TestThreads.class
