@@ -11,7 +11,7 @@ public class DBConnection {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaeeconcurrency", "root", "jp58dqJp");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaeeconcurrency", "root", "********");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
