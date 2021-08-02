@@ -20,7 +20,7 @@ import com.app.runnables.UserProcessor;
 public class TestExecutors {
 
 	public static void main(String[] args) {
-		ExecutorService service = Executors.newSingleThreadExecutor();
+		ExecutorService service = Executors.newFixedThreadPool(3);
 		List<String> users = getUsersFromFile("new_users.txt");
 		
 		UserDao dao = new UserDao();
