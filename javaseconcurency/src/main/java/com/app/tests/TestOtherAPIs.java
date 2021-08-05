@@ -7,6 +7,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -40,7 +41,7 @@ public class TestOtherAPIs {
 		
 		// invokeAny
 		try {
-			System.out.println("\n Result of the first future to return: " + service.invokeAny(callables));
+			System.out.println("\nResult of the first future to return: " + service.invokeAny(callables));
 		} catch (InterruptedException e) {
 			Logger.getLogger(TestOtherAPIs.class.getName()).log(Level.SEVERE, null, e);
 		} catch (ExecutionException e) {
@@ -49,5 +50,12 @@ public class TestOtherAPIs {
 		
 		System.out.println("Main terminated!");
 		service.shutdown();
+		
+		try {
+			System.out.println("service shut down? " + service.awaitTermination(30, TimeUnit.SECONDS));
+		} catch (InterruptedException e) {
+			service.shutdownNow();
+			e.printStackTrace();
+		}
 	}
 }
